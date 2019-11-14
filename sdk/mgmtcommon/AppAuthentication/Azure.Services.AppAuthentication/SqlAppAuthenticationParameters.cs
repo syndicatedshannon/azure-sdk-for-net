@@ -1,8 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
-#if net472
-using System.Data.SqlClient;
+#if (NETSTANDARD2_0 || net472)
+using Microsoft.Data.SqlClient;
 
 namespace Microsoft.Azure.Services.AppAuthentication
 {

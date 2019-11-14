@@ -11,9 +11,9 @@ using Microsoft.Azure.KeyVault;
 using Microsoft.Azure.Services.AppAuthentication.IntegrationTests.Helpers;
 using Microsoft.Azure.Services.AppAuthentication.IntegrationTests.Models;
 using Microsoft.Azure.Services.AppAuthentication.TestCommon;
-#if net472
+#if (NETSTANDARD2_0 || net472)
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 #endif
 
 namespace Microsoft.Azure.Services.AppAuthentication.IntegrationTests
@@ -134,7 +134,7 @@ namespace Microsoft.Azure.Services.AppAuthentication.IntegrationTests
         }
 #endif
 
-#if net472
+#if (NETSTANDARD2_0 || net472)
         /// <summary>
         /// One must be logged in using Azure CLI and set AppAuthenticationTestSqlServerEndpoint to a SQL Azure database endpoint before running this test.
         /// The test validates that it can open a connection with the SQL database using SqlAzureAuthProvider, which implements the SqlAuthenticationProvider interface.
